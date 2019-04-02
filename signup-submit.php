@@ -7,14 +7,7 @@
     $min = $_POST["min"];
     $max = $_POST["max"]; -->
 
-    <?php echo "Thank You!" ?> <br/> 
-    <?php echo "Welcome to Match,". $_POST['name']. "!". ?><br />;
-     <?php echo "now". <a href="matches.php">.log in to view your matches!" ?> </a>
-   
-   <?php
-     $input = $_POST['name'] .',' . $_POST['gender'] .',' . $_POST['Age'] .',' . $_POST['Personality'] .',' . $_POST["favOS"] .',' . $_POST["min"] .',' . $_POST["max"]
-    echo file_put_contents("singles.txt", $input,FILE_APPEND); ?>
-    <!-- $myfile = fopen("singles.txt", "w") -->
+    
 
 
 ?>
@@ -40,9 +33,19 @@
 			<img src="match.png" alt="banner logo" /> <br />
 			where meek geeks meet
 		</div>
-
-
-
+		<br />
+		<?php echo "Thank You! <br />"?>  
+		<?php 
+			echo "Welcome to Match,". $_POST['name']. "!<br/>"; 
+			?> 
+     <?php echo "now". "<a href='matches.php'>log in to view your matches!</a>"; ?> 
+   
+   <?php
+    $input = $_POST['name'] .',' . $_POST['gender'] .',' . $_POST['age'] .',' . $_POST['personality'] .',' . $_POST["favOS"] .',' . $_POST["min"] .',' . $_POST["max"];
+		file_put_contents("singles.txt", $input, FILE_APPEND);
+		?>
+    <!-- $myfile = fopen("singles.txt", "w") -->
+		<br />
 		<div>
 			<p>
 				This page is for single nerds to meet and date each other!  Type in your personal information and wait for the geek love to begin!  Thank you for using our site.

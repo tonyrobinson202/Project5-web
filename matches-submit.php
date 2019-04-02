@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-	echo $_GET["name"];
-
-
-?>
-
 
 <html>
 
@@ -30,6 +24,11 @@
 		</div>
 		
 		<!-- your HTML output follows -->
+		<?php
+			echo "<b>Matches for " . $_GET["name"] . "</b>";
+
+
+		?>
 				
 		<!-- shared page bottom HTML -->
 		<div>

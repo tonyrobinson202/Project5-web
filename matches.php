@@ -21,7 +21,7 @@
 			where meek geeks meet
 		</div>
 
-		<form action="signup-submit.php" method="get">
+		<form action="matches-submit.php" method="get">
 			<fieldset>
 				<input type="text" name="name"> Name:
 				<input type="submit" value="view my matches">

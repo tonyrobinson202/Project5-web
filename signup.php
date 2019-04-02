@@ -34,14 +34,18 @@
 			where meek geeks meet
 		</div>
 		<legend> New User Signup:</legend>
-		<form action="<?php signup-submit.php ?>" method = "POST">
+		<form action="signup-submit.php" method = "POST">
 			<fieldset>
 				<label>Name:</label> <input type="text" name="name" size="16"><br>
 				Gender: <input type="radio" name="gender"
-				<?php if (isset($gender) && $gender=="female") echo "checked";?
+				<?php if (isset($gender) && $gender=="female") 
+					echo "checked";
+				?>
 				value="female">Female
 				<input type="radio" name="gender"
-				<?php if (isset($gender) && $gender=="male") echo "checked";?
+				<?php if (isset($gender) && $gender=="male") 
+					echo "checked";
+				?>
 				value="male">Male<br>
 				Age: <input type="text" name="Age" size="6" maxlength="2"><br>
 				<label for="Personality" href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">
