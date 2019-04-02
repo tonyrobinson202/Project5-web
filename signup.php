@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-
+<!-- 
 <?php
    if( $_POST["name"] || $_POST["age"] ) {
       if (preg_match("/[^A-Za-z'-]/",$_POST['name'] )) {
@@ -11,7 +11,7 @@
       
       exit();
    }
-?>
+?> -->
 <html>
 
 	<!-- shared page top HTML -->
@@ -33,36 +33,34 @@
 			<img src="match.png" alt="banner logo" /> <br />
 			where meek geeks meet
 		</div>
-		<legend> New User Signup:</legend>
-		<form action="signup-submit.php" method = "POST">
-			<fieldset>
-				<label>Name:</label> <input type="text" name="name" size="16"><br>
-				Gender: <input type="radio" name="gender"
-				<?php if (isset($gender) && $gender=="female") 
-					echo "checked";
-				?>
+		
+		<div>
+		<legend>New User Signup:</legend>
+		<form action="signup-submit.php" method="post">
+			<fieldset class="column">
+				<label class="left">Name:</label> <input type="text" name="name" size="16"><br>
+				<label class="left">Gender:</label> <input type="radio" name="gender"
+				
 				value="female">Female
 				<input type="radio" name="gender"
-				<?php if (isset($gender) && $gender=="male") 
-					echo "checked";
-				?>
+				
 				value="male">Male<br>
-				Age: <input type="text" name="Age" size="6" maxlength="2"><br>
-				<label for="Personality" href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">
-				<a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">Personality Type:</a></label> <input type= "text" name="Personality" maxlength="4" label="http://www.humanmetrics.com/cgi-win/JTypes2.asp" >
+				<label class="left">Age:</label><input type="text" name="Age" size="6" maxlength="2"><br>
+				<label class="left">Personality Type:</label><input type= "text" name="Personality" size="6" maxlength="4"><a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Dont know your type?)</a>
 				<br>
-				Favorite OS: <select name="favOS">
+				<label class="left">Favorite OS:</label><select name="favOS">
   								<option value="">Select...</option>
   								<option value="Windows">Windows</option>
   								<option value="MacOsX">Mac OS X</option>
   								<option value="Linux">Linux</option>
 							</select><br>
 
-				Seeking Age: <input type="text" size="6" name="min" placeholder="min"> <input size="6" type="text" name='max' placeholder="max"><br>
+				<label class="left">Seeking Age:</label><input type="text" size="6" name="min" placeholder="min">to<input size="6" type="text" name='max' placeholder="max"><br>
 
 				<input type="submit" value="Sign Up">
 			</fieldset>
 		</form>
+</div>
 
 
 
