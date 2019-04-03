@@ -112,7 +112,7 @@ $fileName = 'oldspice_guy.jpg';
 		}
 
 	//searches for the matches based on the criteria and post them
-	  // while($test < 5){
+	  while($newLine < 2000){
 	 	if (preg_match(($gender),$contents,$matches2,PREG_OFFSET_CAPTURE, $newLine))  {
 			$lineNumber = count(explode("\n", substr($contents, 0, $matches2[0][1])));
     		// echo "<br/>";
@@ -123,7 +123,7 @@ $fileName = 'oldspice_guy.jpg';
 	 		$newLine = $matches2[0][1]+1;
 	 		//echo $newLine;
 		}
-		echo $newLine;
+		//echo $newLine;
 		// echo "<br/>";
 		//echo $lineNumber;
 		$file2 = new SplFileObject("singles.txt");
@@ -141,7 +141,7 @@ $fileName = 'oldspice_guy.jpg';
 			
 			//echo "true ";
 			//print_r($match);
-			if($match[2]>$min && $match[2] < $max){
+			// if($match[2]>$min && $match[2] < $max){
 
 		$fileName = $match[0];
 		$fileName = strtolower($fileName);
@@ -167,10 +167,13 @@ $fileName = 'oldspice_guy.jpg';
 			echo $match[1]. '<br/>';
 			echo $match[2]. '<br/>';
 			echo 'OS:		' . $match[4];
+		//}
 		}
-		}
+		if($newLine==1836){
+		exit();
+}
 		//print_r($match);
-	 // }
+	 }
 ?>
 		<!-- shared page bottom HTML -->
 		<div>
