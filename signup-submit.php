@@ -37,8 +37,20 @@
      <?php echo "now ". "<a href='matches.php'>log in to view your matches!</a>"; ?> 
    
    <?php
-    $input = "\r\n" . $_POST['name'] .',' . $_POST['gender'] .',' . $_POST['Age'] .',' . $_POST['Personality'] .',' . $_POST["favOS"] .',' . $_POST["min"] .',' . $_POST["max"];
-		file_put_contents("singles.txt", $input, FILE_APPEND);
+   	$pic = $_POST['fileToUpload'];
+   	$pic = strtolower($pic);
+	$pic = str_replace(' ', '_', $pic). '.jpg';
+   	
+	$target_dir = "Images/";
+	$target_file = $target_dir . basename($_FILES[$pic]["name"]);
+	$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	if (move_uploaded_file($_FILES[$pic]["tmp_name"], $target_file)) {
+        echo "The file ". basename( $_FILES[$pic]["name"]). " has been uploaded.";
+	}
+
+  //  	file_put_contents('Images/', $pic);
+  //   $input = "\r\n" . $_POST['name'] .',' . $_POST['gender'] .',' . $_POST['Age'] .',' . $_POST['Personality'] .',' . $_POST["favOS"] .',' . $_POST["min"] .',' . $_POST["max"];
+		// file_put_contents("singles.txt", $input, FILE_APPEND);
 		?>
     <!-- $myfile = fopen("singles.txt", "w") -->
 		<br />

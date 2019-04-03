@@ -123,6 +123,7 @@ $fileName = 'oldspice_guy.jpg';
 	 		$newLine = $matches2[0][1]+1;
 	 		//echo $newLine;
 		}
+		echo $newLine;
 		// echo "<br/>";
 		//echo $lineNumber;
 		$file2 = new SplFileObject("singles.txt");
@@ -143,6 +144,7 @@ $fileName = 'oldspice_guy.jpg';
 			if($match[2]>$min && $match[2] < $max){
 
 		$fileName = $match[0];
+		$fileName = strtolower($fileName);
 		$fileName = str_replace(' ', '_', $fileName). '.jpg';
 		//echo "This is it: " . $fileName . "<br/>";
 		// $fileName = 'Oldspice_Guy.jpg';

@@ -60,6 +60,14 @@
 				<input type="submit" value="Sign Up">
 			</fieldset>
 		</form>
+
+		<form action="signup-submit.php" method="post" enctype="multipart/form-data">
+			<fieldset class="column">
+    	<label class="left">Browse Image:</label>
+    	<input type="file" name="fileToUpload" id="fileToUpload">
+    	<input type="submit" value="Upload Image" name="submit">
+    </fieldset>
+</form>
 </div>
 
 
