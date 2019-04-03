@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 
-    <!-- $gender = $_POST['gender'];
-    $age = $_POST['Age'];
-    $personality = $_POST['Personality'];
-    $OS = $_POST["favOS"];
-    $min = $_POST["min"];
-    $max = $_POST["max"]; -->
-
     
 <html>
 
@@ -30,16 +23,66 @@
 			where meek geeks meet
 		</div>
 		<br />
-		<?php echo "Thank You! <br />"?>  
 		<?php 
-			echo "Welcome to Match, ". $_POST['name']. "!<br/>"; 
-			?> 
-     <?php echo "now ". "<a href='matches.php'>log in to view your matches!</a>"; ?> 
+			$name = $gender = $age = $personality = $favOS = $min = $max = "";
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				$name = $_POST["name"];
+				$gender = $_POST["gender"];
+				$age = $_POST["Age"];
+				$personality = $_POST["Personality"];
+				$favOS = $_POST["favOS"];
+				$min = $_POST["min"];
+				$max = $_POST["max"];
+			}
+
+			$valid = 1;
+			if (empty($name)){
+				$valid=0;
+			}
+			if($age < 0 or $age>99){
+				$valid=0;
+			}
+			if (!$gender[0]==="M" and !$gender[0]==="F"){ 
+				$valid=0; 
+			}
+			if ($personality[0]!=="I" and $personality[0]!=="E"){
+				$valid=0;
+			}
+			if ($personality[1]!=="N" and $personality[1]!=="S"){
+				$valid=0;
+			}
+			if ($personality[2]!=="F" and $personality[2]!=="T"){
+				$valid=0;
+			}
+			if (strcmp($personality[3],"P")!==0 and strcmp($personality[3],"J")!==0){
+				$valid=0;
+			}
+			if ($favOS!=="Linux" and $favOS!=="Windows" and trim($favOS)!=="MacOsX"){
+				$valid=0;
+			}
+			if ($min < 0 or $max > 99){
+				$valid=0;
+			}
+			if ($max < 0 or $max > 99){
+				$valid=0;
+			}
+
+			if ($valid==1){			
+				echo "Thank You! <br />";
+				echo "Welcome to Match, ". $_POST['name']. "!<br/>"; 
+				echo "now ". "<a href='matches.php'>log in to view your matches!</a>";
+			} 
+			else {
+				echo "Error, try again.";
+			}			
+
+		?> 
+    
    
    <?php
    	$pic = $_POST['fileToUpload'];
    	$pic = strtolower($pic);
-	$pic = str_replace(' ', '_', $pic). '.jpg';
+		$pic = str_replace(' ', '_', $pic). '.jpg';
    	
 	$target_dir = "Images/";
 	$target_file = $target_dir . basename($_FILES[$pic]["name"]);
