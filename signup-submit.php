@@ -8,10 +8,6 @@
     $max = $_POST["max"]; -->
 
     
-
-
-?>
-
 <html>
 
 	<!-- shared page top HTML -->
@@ -36,12 +32,12 @@
 		<br />
 		<?php echo "Thank You! <br />"?>  
 		<?php 
-			echo "Welcome to Match,". $_POST['name']. "!<br/>"; 
+			echo "Welcome to Match, ". $_POST['name']. "!<br/>"; 
 			?> 
-     <?php echo "now". "<a href='matches.php'>log in to view your matches!</a>"; ?> 
+     <?php echo "now ". "<a href='matches.php'>log in to view your matches!</a>"; ?> 
    
    <?php
-    $input = $_POST['name'] .',' . $_POST['gender'] .',' . $_POST['age'] .',' . $_POST['personality'] .',' . $_POST["favOS"] .',' . $_POST["min"] .',' . $_POST["max"];
+    $input = "\r\n" . $_POST['name'] .',' . $_POST['gender'] .',' . $_POST['Age'] .',' . $_POST['Personality'] .',' . $_POST["favOS"] .',' . $_POST["min"] .',' . $_POST["max"];
 		file_put_contents("singles.txt", $input, FILE_APPEND);
 		?>
     <!-- $myfile = fopen("singles.txt", "w") -->

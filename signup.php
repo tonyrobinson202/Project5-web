@@ -41,10 +41,10 @@
 				<label class="left">Name:</label> <input type="text" name="name" size="16"><br>
 				<label class="left">Gender:</label> <input type="radio" name="gender"
 				
-				value="female">Female
+				value="F">Female
 				<input type="radio" name="gender"
 				
-				value="male">Male<br>
+				value="M">Male<br>
 				<label class="left">Age:</label><input type="text" name="Age" size="6" maxlength="2"><br>
 				<label class="left">Personality Type:</label><input type= "text" name="Personality" size="6" maxlength="4"><a href="http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Dont know your type?)</a>
 				<br>
