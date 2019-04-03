@@ -25,6 +25,8 @@
 		
 		<!-- your HTML output follows -->
 		<?php
+			
+
 			$myArray = array();
 			$matches = array();
 			$matches2 = array();
@@ -85,11 +87,32 @@ fclose($handle);
 
  	$file = fopen("singles.txt", "r");
 		$start = 1;
-		$newLine = 0;
+		$newLine = 1;
 
+
+
+$test = 1;
+
+$fileName = 'oldspice_guy.jpg';
+		
+		$dir = 'Images/';
+		if (is_dir($dir)) {
+	
+    		if ($dh = opendir($dir)) {
+    			if($fileName = readdir($dh)){
+    				echo "found <br/>";
+    				echo '<img src="'. $dir. '/'. $fileName. '" alt="'. $fileName. '" />';
+
+    			}
+        		// while (($fileName = readdir($dh)) !== false) {
+          //   		echo "filename:" . $fileName . "<br>";
+        		// }
+        		closedir($dh);
+    		}
+		}
 
 	//searches for the matches based on the criteria and post them
-	while($newline < 5){
+	  // while($test < 5){
 	 	if (preg_match(($gender),$contents,$matches2,PREG_OFFSET_CAPTURE, $newLine))  {
 			$lineNumber = count(explode("\n", substr($contents, 0, $matches2[0][1])));
     		// echo "<br/>";
@@ -114,13 +137,38 @@ fclose($handle);
 		$match = explode(',', $content);
 		echo "<br/>";
 		if($match[4]==$OS){
+			
 			//echo "true ";
 			//print_r($match);
-			echo $match[0]. '<br/>';
-			echo ' OS:		' . $match[4];
+			if($match[2]>$min && $match[2] < $max){
+
+		$fileName = $match[0];
+		$fileName = str_replace(' ', '_', $fileName). '.jpg';
+		//echo "This is it: " . $fileName . "<br/>";
+		// $fileName = 'Oldspice_Guy.jpg';
+		// echo $fileName;
+		// $dir = 'Images/';
+		// if (is_dir($dir)) {
+		// 	echo "here <br/>";
+  //   		if ($dh = opendir($dir)) {
+  //   			echo "here2 <br/>";
+  //       		while (($fileName = readdir($dh)) !== false) {
+  //           		echo "filename:" . $fileName . "<br>";
+  //       		}
+  //       		closedir($dh);
+  //   		}
+		// }
+
+
+
+			echo $match[0]. '<br/>'. '<br>';
+			echo $match[1]. '<br/>';
+			echo $match[2]. '<br/>';
+			echo 'OS:		' . $match[4];
+		}
 		}
 		//print_r($match);
-	  }
+	 // }
 ?>
 		<!-- shared page bottom HTML -->
 		<div>
