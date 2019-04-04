@@ -179,9 +179,9 @@ $test = 1;
     			if($fileName = readdir($dh)){
     				//echo "found <br/>";
     				//echo $fileName2 . ":";
-    				echo "<p width:150px>".'<img src="Images/'. $fileName2 .'">'. $match[0]. "</p>";
-    				echo "<ul>" . "Gender: " .$match[1]. "</li>".
-    				"<li>". "Age: ". "\t\t" .$match[2] . "</li>". "<li>". "Type:\t ". $match[3] ."</li>"  ."<li>". "OS:\t ". $match[4] ."</li>" ."</ul>";
+    				echo "<p >".'<img src="Images/'. $fileName2 .'" >'. $match[0]. "</p>";
+    				echo "<ul>" . "<li>". "Gender: " .$match[1]. "</li>".
+    				"<li>". "Age: " .$match[2] . "</li>". "<li>". "Type:\t ". $match[3] ."</li>"  ."<li>". "OS: ". $match[4] ."</li>" ."</ul>";
     				//echo 'src="Images/'. $fileName .'">';
     				//echo '<img src="Images/oldspice_guy.jpg">';
     				//. $dir. $fileName. ' alt='. $fileName. ' />';
@@ -217,6 +217,9 @@ $test = 1;
 			//echo $match[0]. '<br/>'. '<br>';
 			//echo $match[1]. '<br/>';
 			// echo $match[2]. '<br/>';
+		}
+		else{
+			echo "Sorry no matches found <br/>";
 		}	// echo 'OS:		' . $match[4];
 		}
 		}
@@ -226,7 +229,7 @@ $test = 1;
 
 
 			echo "<div>". 
-				"<p>"."This page is for single nerds to meet and date each other!  Type in your personal information and wait for the geek love to begin!  Thank you for using our site."."</p>". "<p>". "Results and page (C) Copyright Match Inc." . "</p>". "<ul>". "<li>". "<a href='index.php'>". "<img src='back.gif' alt='icon' style='width:20px;height=20px;'/>". "Back to front page". "</a>". "</li>". "</ul>". "</div>";
+				"<p>"."This page is for single nerds to meet and date each other!  Type in your personal information and wait for the geek love to begin!  Thank you for using our site."."</p>". "<p>". "Results and page (C) Copyright Match Inc." . "</p>". "<ul>". "<li>". "<a href='index.php'>". "<img src='back.gif' alt='icon' style='width:20px;height:20px;'/>". "Back to front page". "</a>". "</li>". "</ul>". "</div>";
 
 
 
