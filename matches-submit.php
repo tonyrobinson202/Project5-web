@@ -159,7 +159,9 @@ $test = 1;
     			if($fileName = readdir($dh)){
     				//echo "found <br/>";
     				//echo $fileName2 . ":";
-    				echo "<p width='150px'>".'<img src="Images/'. $fileName2 .'">'."</p>";
+    				echo "<p width='150px'>".'<img src="Images/'. $fileName2 .'">'. $match[0]. "</p>";
+    				echo "<ul>" . "Gender: " .$match[1]. "</li>".
+    				"<li>". "Age: ". "\t\t" .$match[2] . "</li>". "<li>". "Type:\t ". $match[3] ."</li>"  ."<li>". "OS:\t ". $match[4] ."</li>" ."</ul>";
     				//echo 'src="Images/'. $fileName .'">';
     				//echo '<img src="Images/oldspice_guy.jpg">';
     				//. $dir. $fileName. ' alt='. $fileName. ' />';
@@ -192,10 +194,10 @@ $test = 1;
 
 
 
-			echo $match[0]. '<br/>'. '<br>';
-			echo $match[1]. '<br/>';
-			echo $match[2]. '<br/>';
-			echo 'OS:		' . $match[4];
+			//echo $match[0]. '<br/>'. '<br>';
+			//echo $match[1]. '<br/>';
+			// echo $match[2]. '<br/>';
+			// echo 'OS:		' . $match[4];
 		//}
 		}
 		if($newLine == 1836){
