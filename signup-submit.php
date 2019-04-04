@@ -73,6 +73,10 @@
 			if ($max < 0 or $max > 99){
 				$valid=0;
 			}
+			if( strpos(file_get_contents("singles.txt"),$name) !== false) {
+				$valid=0;
+				echo "Someone has already registered with this name. <br/>";
+    	}		
 
 			if ($valid==1){			
 				//	file_put_contents('Images/', $pic);
