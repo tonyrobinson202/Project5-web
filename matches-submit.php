@@ -76,7 +76,7 @@ fclose($handle);
 		else{
 			$gender ='/,F,/';
 		}
-
+		$person = $content2[3];
 		$min = $content2[5];
 		$max = $content2[6];
 		$OS = $content2[4];
@@ -146,7 +146,27 @@ $test = 1;
 			
 			//echo "true ";
 			//print_r($match);
-			// if($match[2]>$min && $match[2] < $max){
+			 if($match[2]>$min && $match[2] < $max){
+			 	$person1= $match[3];
+
+			 	$person2 = $content[3];
+			 	//print_r($person2) . "<br/>";
+
+			 	//$person3 = explode(',', $match[3]);
+			 	$person = strtoupper($person);
+			 	//echo $person1[0] . "<br/>";
+			 	$x = 0;
+			 	$count = 0;
+			 	for($x; $x < 4; $x++){
+			 		//echo "person1:". $person[$x]. "<br/>"; 
+			 		//echo "person2:".$person1[$x]. "<br/>";
+			 		if($person[$x] == $person1[$x]){
+			 			$count++;
+			 			//echo "this is: " .$count;
+			 		}
+			 	}
+			 		if($count> 0){
+			 	
 
 		$fileName = $match[0];
 		$fileName = strtolower($fileName);
@@ -197,8 +217,8 @@ $test = 1;
 			//echo $match[0]. '<br/>'. '<br>';
 			//echo $match[1]. '<br/>';
 			// echo $match[2]. '<br/>';
-			// echo 'OS:		' . $match[4];
-		//}
+		}	// echo 'OS:		' . $match[4];
+		}
 		}
 		if($newLine == 1836){
 
@@ -206,7 +226,7 @@ $test = 1;
 
 
 			echo "<div>". 
-				"<p>"."This page is for single nerds to meet and date each other!  Type in your personal information and wait for the geek love to begin!  Thank you for using our site."."</p>". "<p>". "Results and page (C) Copyright Match Inc." . "</p>". "<ul>". "<li>". "<a href='index.php'>". "<img scr='back.gif' alt='icon'/>". "Back to front page". "</a>". "</li>". "</ul>". "</div>";
+				"<p>"."This page is for single nerds to meet and date each other!  Type in your personal information and wait for the geek love to begin!  Thank you for using our site."."</p>". "<p>". "Results and page (C) Copyright Match Inc." . "</p>". "<ul>". "<li>". "<a href='index.php'>". "<img src='back.gif' alt='icon'/>". "Back to front page". "</a>". "</li>". "</ul>". "</div>";
 
 
 
