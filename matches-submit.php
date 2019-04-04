@@ -68,7 +68,7 @@ fclose($handle);
 		//print_r($myArray);
 		
 		$content2 = $myArray;
-		echo $content2[0];
+		//echo $content2[0];
 		if($content2[1]=='F'){
 			$gender = '/,M,/';
 		}
@@ -93,26 +93,30 @@ fclose($handle);
 
 $test = 1;
 
-$fileName = 'oldspice_guy.jpg';
+//$fileName = 'oldspice_guy.jpg';
 		
 		$dir = 'Images/';
-		if (is_dir($dir)) {
+		// if (is_dir($dir)) {
 	
-    		if ($dh = opendir($dir)) {
-    			if($fileName = readdir($dh)){
-    				echo "found <br/>";
-    				echo '<img src="'. $dir. '/'. $fileName. '" alt="'. $fileName. '" />';
+  //   		if ($dh = opendir($dir)) {
+  //   			if($fileName = readdir($dh)){
+  //   				//echo "found <br/>";
+  //   				echo '<img src="Images/oldspice_guy.jpg">';
+  //   				//. $dir. $fileName. ' alt='. $fileName. ' />';
 
-    			}
-        		// while (($fileName = readdir($dh)) !== false) {
-          //   		echo "filename:" . $fileName . "<br>";
-        		// }
-        		closedir($dh);
-    		}
-		}
+  //   			}
+  //       		// while (($fileName = readdir($dh)) !== false) {
+  //         //   		echo "filename:" . $fileName . "<br>";
+  //       		// }
+  //       		closedir($dh);
+  //   		}
+		//}
+
+		$size =filesize ('singles.txt'); 
+		;
 
 	//searches for the matches based on the criteria and post them
-	  while($newLine < 2000){
+	  while($newLine < $size){
 	 	if (preg_match(($gender),$contents,$matches2,PREG_OFFSET_CAPTURE, $newLine))  {
 			$lineNumber = count(explode("\n", substr($contents, 0, $matches2[0][1])));
     		// echo "<br/>";
@@ -146,6 +150,30 @@ $fileName = 'oldspice_guy.jpg';
 		$fileName = $match[0];
 		$fileName = strtolower($fileName);
 		$fileName = str_replace(' ', '_', $fileName). '.jpg';
+		$fileName2 = $fileName;
+		//echo $fileName. '<br/>';
+		if (is_dir($dir)) {
+	
+    		if ($dh = opendir($dir)) {
+    			if($fileName = readdir($dh)){
+    				//echo "found <br/>";
+    				//echo $fileName2 . ":";
+    				echo '<img src="Images/'. $fileName2 .'">';
+    				//echo 'src="Images/'. $fileName .'">';
+    				//echo '<img src="Images/oldspice_guy.jpg">';
+    				//. $dir. $fileName. ' alt='. $fileName. ' />';
+
+    			}
+        		// while (($fileName = readdir($dh)) !== false) {
+          //   		echo "filename:" . $fileName . "<br>";
+        		// }
+        		closedir($dh);
+    		}
+		}
+
+
+
+
 		//echo "This is it: " . $fileName . "<br/>";
 		// $fileName = 'Oldspice_Guy.jpg';
 		// echo $fileName;
@@ -169,8 +197,8 @@ $fileName = 'oldspice_guy.jpg';
 			echo 'OS:		' . $match[4];
 		//}
 		}
-		if($newLine==1836){
-		exit();
+		if($newLine == 1836){
+					exit();
 }
 		//print_r($match);
 	 }
