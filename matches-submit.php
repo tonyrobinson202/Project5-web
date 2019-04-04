@@ -24,6 +24,7 @@
 		</div>
 		
 		<!-- your HTML output follows -->
+		<div class="match">
 		<?php
 			
 
@@ -158,7 +159,7 @@ $test = 1;
     			if($fileName = readdir($dh)){
     				//echo "found <br/>";
     				//echo $fileName2 . ":";
-    				echo '<img src="Images/'. $fileName2 .'">';
+    				echo "<p width='150px'>".'<img src="Images/'. $fileName2 .'">'."</p>";
     				//echo 'src="Images/'. $fileName .'">';
     				//echo '<img src="Images/oldspice_guy.jpg">';
     				//. $dir. $fileName. ' alt='. $fileName. ' />';
@@ -198,11 +199,23 @@ $test = 1;
 		//}
 		}
 		if($newLine == 1836){
+
+
+
+
+			echo "<div>". 
+				"<p>"."This page is for single nerds to meet and date each other!  Type in your personal information and wait for the geek love to begin!  Thank you for using our site."."</p>". "<p>". "Results and page (C) Copyright Match Inc." . "</p>". "<ul>". "<li>". "<a href='index.php'>". "<img scr='back.gif' alt='icon'/>". "Back to front page". "</a>". "</li>". "</ul>". "</div>";
+
+
+
+
+
 					exit();
 }
 		//print_r($match);
 	 }
 ?>
+</div>
 		<!-- shared page bottom HTML -->
 		<div>
 			<p>
